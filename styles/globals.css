@@ -1,0 +1,365 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+.swiper-slide-thumb-active img {
+  border: 1px solid #0045d8 !important;
+}
+.product-images-thumbs-swiper.swiper-container .swiper-slide {
+  height: 0 !important;
+  padding-bottom: 25%;
+}
+.product-images-thumbs-swiper.swiper-container .swiper-slide > div {
+  height: 0 !important;
+  padding-bottom: 100%;
+}
+.swiper-button-disabled {
+  opacity: 0.5 !important;
+}
+/* .cart-icon {
+  @apply relative before:content-[attr(data-count)] before:absolute before:flex before:items-center before:justify-center before:bg-webriq-darkblue before:rounded-full before:h-6 before:w-6 before:-top-3 before:-right-3 before:text-white;
+} */
+html#ecwid_html body#ecwid_body .cart-icon {
+  position: relative;
+}
+html#ecwid_html body#ecwid_body .cart-icon .cart-link {
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+}
+html#ecwid_html body#ecwid_body .cart-icon .ec-minicart__icon svg {
+  width: 32px;
+  height: 32px;
+}
+html#ecwid_html body#ecwid_body .ec-minicart__icon .icon-default path[stroke] {
+  stroke-width: 1;
+}
+html#ecwid_html body#ecwid_body .ec-minicart--m .ec-minicart__counter::after {
+  background-color: #007aff !important;
+}
+html#ecwid_html body#ecwid_body .ec-size .ec-store .ec-breadcrumbs {
+  display: none !important;
+}
+
+.product-images-swiper.swiper-container {
+  height: calc(auto + 1px);
+  /* position: relative; */
+}
+.product-images-swiper.swiper-container {
+  padding-top: 10px;
+}
+.product-images-swiper.swiper-container .swiper-wrapper {
+  position: relative;
+  height: 0 !important;
+  padding-bottom: 100%;
+}
+.product-images-swiper.swiper-container .swiper-slide {
+  height: 0 !important;
+  padding-bottom: 100%;
+}
+.product-images-swiper.swiper-container .swiper-slide > div {
+  height: 0 !important;
+  padding-bottom: 100%;
+}
+.toastContainer {
+  z-index: 1;
+}
+
+/* hide navigation sidebar when screen is less than screen size */
+@media (min-width: 1280px) {
+  .mobile-nav {
+    display: none;
+  }
+}
+
+@media (min-width: 1560px) {
+  .main-nav {
+    left: 50%;
+    align-items: center;
+    width: auto;
+  }
+}
+@media (max-width: 1559px) {
+  .main-nav {
+    left: 40%;
+    align-items: center;
+  }
+}
+
+/** Sanity Studio embed **/
+
+/* Cosmetic: Remove border-right of tools menu */
+div[data-ui="Navbar"] > div > div:first-child > div:last-child {
+  border-right: 0 !important;
+}
+
+/* Hide every thing in the right navbar */
+div[data-ui="Navbar"] > div > div:last-child {
+  display: none !important;
+}
+
+/*  Fallback: Hide manage project from menu */
+a[data-ui="MenuItem"][href^="https://sanity.io/manage/project"],
+a[data-ui="MenuItem"][href^="https://sanity.io/manage/project"] + hr
+{
+  display: none !important;
+}
+
+/* Fallback: Hide user and logout popover from menu */
+button#presence-menu,
+button#login-status-menu {
+  display: none !important;
+}
+
+/* Desktop: when using field groups, we hide the first tab */
+[data-ui="TabList"][data-testid="field-group-tabs"] > div:first-child {
+  display: none;
+}
+
+/* Mobile: when using field groups, hide the first option */
+select[data-testid="field-group-select"] > option:first-child {
+  display: none;
+}
+
+/* Inline Editing split pane */
+.nav-panesearch div[data-search-open] {
+  display: none !important;
+}
+.nav-paneheader div[data-testid="pane-header"] > div > div > div:nth-child(2) {
+  display: none !important;
+}
+.desk-listpane div[data-testid="desk-tool-list-pane"] {
+  display: none !important;
+}
+.document-pane div[data-testid="document-pane"] {
+  position: relative !important;
+}
+.field-label div[data-testid="field-label"] {
+  display: none !important;
+}
+.field-variant div[data-testid="field-variant"] {
+  display: none !important;
+}
+.panel div[data-testid="document-panel-scroller"] > div {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+.pane-footer div[data-testid="pane-footer"] {
+  position: sticky !important;
+  bottom: 0;
+}
+.fieldgroup-tabs div[data-ui="TabList"][data-testid="field-group-tabs"] {
+  display: none;
+}
+.fieldgroup-select
+  select[data-testid="field-group-select"]
+  > option:first-child {
+  display: none;
+}
+/* fieldgroup style for main product document */
+.product-fieldgroup-tabs
+  div[data-ui="TabList"][data-testid="field-group-tabs"]
+  > div:not(:nth-child(2)):not(:nth-child(3)) {
+  display: none;
+}
+.product-fieldgroup-select
+  select[data-testid="field-group-select"]
+  > option:not(:nth-child(2)):not(:nth-child(3)) {
+  display: none;
+}
+
+/* Inline Editing button and container */
+.hide {
+  display: none;
+}
+
+.inline-editor:hover {
+  transition: all 300ms ease-in-out;
+  box-shadow: 0px 0px 25px #0045d8;
+  z-index: 9;
+  width: 99%;
+  margin: auto;
+}
+
+.show-button:hover .hide {
+  display: inline-flex;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  z-index: 40;
+}
+
+/* Duplicate page settings modal */
+.showBtn:hover .hide {
+  display: block;
+}
+
+/** Help Guide **/
+div[aria-label="List of Content"] {
+  min-height: calc(100vh - 260px);
+}
+
+div[aria-label="List of Content"] > div:last-child {
+  border-top: 1px solid var(--card-border-color);
+  position: absolute;
+  width: 100%;
+  transform: none;
+  bottom: 0;
+  top: inherit !important;
+}
+/* End */
+
+/** Scheduled publishing **/
+.react-calendar {
+  width: 350px;
+  max-width: 100%;
+  background: white;
+  border: 1px solid #c6cad3ff;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.125em;
+}
+
+.react-calendar--doubleView {
+  width: 700px;
+}
+
+.react-calendar--doubleView .react-calendar__viewContainer {
+  display: flex;
+  margin: -0.5em;
+}
+
+.react-calendar--doubleView .react-calendar__viewContainer > * {
+  width: 50%;
+  margin: 0.5em;
+}
+
+.react-calendar,
+.react-calendar *,
+.react-calendar *:before,
+.react-calendar *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.react-calendar button {
+  margin: 0;
+  border: 0;
+  outline: none;
+}
+
+.react-calendar button:enabled:hover {
+  cursor: pointer;
+}
+
+.react-calendar__navigation {
+  display: flex;
+  height: 44px;
+  margin-bottom: 1em;
+}
+
+.react-calendar__navigation button {
+  min-width: 44px;
+  background: none;
+}
+
+.react-calendar__navigation button:disabled {
+  background-color: #f0f0f0;
+}
+
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  background-color: #e6e6e6;
+}
+
+.react-calendar__month-view__weekdays {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.75em;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  padding: 0.5em;
+}
+
+.react-calendar__month-view__weekNumbers .react-calendar__tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75em;
+  font-weight: bold;
+}
+
+.react-calendar__month-view__days__day--weekend {
+  color: #0045d8;
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+  color: #757575;
+}
+
+.react-calendar__year-view .react-calendar__tile,
+.react-calendar__decade-view .react-calendar__tile,
+.react-calendar__century-view .react-calendar__tile {
+  padding: 2em 0.5em;
+}
+
+.react-calendar__tile {
+  max-width: 100%;
+  padding: 10px 6.6667px;
+  background: none;
+  text-align: center;
+  line-height: 16px;
+}
+
+.react-calendar__tile:disabled {
+  background-color: #f0f0f0;
+}
+
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  background-color: #e6e6e6;
+}
+
+.react-calendar__tile--now {
+  background: #d5e3ff;
+}
+
+.react-calendar__tile--now:enabled:hover,
+.react-calendar__tile--now:enabled:focus {
+  background: #0045d8;
+  color: white;
+}
+
+.react-calendar__tile--hasActive {
+  background: #d5e3ff;
+}
+
+.react-calendar__tile--hasActive:enabled:hover,
+.react-calendar__tile--hasActive:enabled:focus {
+  background: #a9d4ff;
+}
+
+.react-calendar__tile--active {
+  background: #0045d8;
+  color: white;
+}
+
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
+  background: #296eff;
+}
+
+.react-calendar--selectRange .react-calendar__tile--hover {
+  background-color: #3576ff;
+}
+
+/** End **/
