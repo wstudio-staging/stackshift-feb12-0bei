@@ -1,0 +1,11 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:storybook/recommended"
+  ],
+  "rules": {
+    "import/no-anonymous-default-export": "off",
+    "react-hooks/rules-of-hooks": "off",
+    "@next/next/no-html-link-for-pages": "off"
+  }
+}
