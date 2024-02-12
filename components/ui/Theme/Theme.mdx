@@ -1,0 +1,71 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+import { Table } from "./Theme.tsx";
+import * as TextStories from "../Text/Text.stories";
+import * as BlockStories from "../BlockStyle/Blockstyle.stories.tsx";
+import { default as twConfig } from "../../../tailwind.config";
+
+export const config = twConfig.theme.extend?.colors;
+
+<Meta title="Theme" />
+
+# Theme
+
+## Brand Colors
+
+export const brandColors = "brand" in config ? config?.brand : {};
+
+Imported from `tailwind.config.ts` file. You may edit these directly on the config file.
+
+<div className="mb-10">
+  {brandColors && <Table colors={brandColors} prefix={"brand"} />}
+</div>
+
+## Neutral Colors
+
+export const neutralColors = "neutral" in config ? config?.neutral : {};
+
+Neutral colors used throughout the whole app.
+
+<div className="mb-10">
+  {neutralColors && <Table colors={neutralColors} prefix={"neutral"} />}
+</div>
+
+## Border size and radius
+
+<table className="w-full">
+  <thead>
+    <tr>
+      <th className="font-medium text-lg w-[50%]">Preview</th>
+      <th className="font-medium text-lg w-[50%]">Tailwind Class</th>
+    </tr>
+  </thead>
+  <tbody className="text-center">
+    <tr className="!bg-white">
+      <td className="flex justify-center">
+        <div
+          className="border  rounded-lg"
+          style={{
+            height: "100px",
+            width: "100px",
+          }}
+        ></div>
+      </td>
+      <td>rounded-lg</td>
+    </tr>
+
+  </tbody>
+</table>
+
+## Typography
+
+Standard typography theme of the project. See the **Text** component under the **Components/UI** section for more information.
+
+<Canvas of={TextStories.Primary} />
+
+## Default Block Styles
+
+Different from the **Typography** section. This is used to render data using the **PortableText** component, commonly used for blogs. See **Blockstyle** under the **Components/UI** section for more info.
+
+<div className="p-8 boder-solid border border-gray-100/50">
+  <Story of={BlockStories.Primary} />
+</div>
