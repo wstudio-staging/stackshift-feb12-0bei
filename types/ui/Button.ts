@@ -23,4 +23,8 @@ export interface ButtonProps {
    * Optional class name overrides
    */
   className?: string;
+  /**
+   * Optional class 
+   */
+  optionalClass?: string;
 }
